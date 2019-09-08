@@ -46,7 +46,7 @@ router.post("/", async (req, res) => {
 });
 
 
-//specific Author Route
+//DETAILS Author Route
 router.get("/:id", async(req, res) => {
   try {
     const author = await Author.findById(req.params.id);
@@ -62,6 +62,7 @@ router.get("/:id", async(req, res) => {
 });
 
 
+//EDIT
 router.get("/:id/edit", async (req, res) => {
   try {
     const author = await Author.findById(req.params.id);
@@ -71,6 +72,8 @@ router.get("/:id/edit", async (req, res) => {
   }
 });
 
+
+//UPDATE
 router.put("/:id", async (req, res) => {
   let author;
   try {
@@ -90,6 +93,8 @@ router.put("/:id", async (req, res) => {
   }
 });
 
+
+//DELETE
 router.delete("/:id", async(req, res) => {
   let author;
   try {
